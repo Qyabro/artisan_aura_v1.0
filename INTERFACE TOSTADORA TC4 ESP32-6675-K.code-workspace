@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "INTERFACE TOSTADORA TC4 ESP32-6675-K",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "cpp"
+		}
+	}
+}
