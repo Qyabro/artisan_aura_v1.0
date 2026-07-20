@@ -16,8 +16,8 @@
 #include <WebServer.h> 
 
 // --- VERSIONES ---
-#define HARDWARE_VERSION "TITAN Basic v1.1"
-#define FIRMWARE_VERSION "v1.4" 
+#define HARDWARE_VERSION "AURA v1.0"
+#define FIRMWARE_VERSION "v1.0.0" 
 
 // --- OBJETOS ---
 ModbusIP mb;              
@@ -26,9 +26,9 @@ Preferences preferences;
 WebServer server(80); 
 
 // --- CONFIGURACIÓN WIFI (FIJO EN AP) ---
-#define DEFAULT_AP_SSID "TITAN-BASIC" 
+#define DEFAULT_AP_SSID "AURA_v1.0" 
 #define DEFAULT_AP_PASS "12345678"      
-#define DEFAULT_BT_NAME "TITAN-BASIC" 
+#define DEFAULT_BT_NAME "AURA_v1.0" 
 #define DEFAULT_DNS     "titan"         
 
 // --- PINES LEDS ---
@@ -223,7 +223,7 @@ void cmdFirmware(SerialCommands* sender){ sender->GetSerial()->println(FIRMWARE_
 void cmdHardware(SerialCommands* sender){ sender->GetSerial()->println(HARDWARE_VERSION); }
 void cmdStatus(SerialCommands* sender){
   Stream* s = sender->GetSerial(); 
-  s->println("\n--- TITAN STATUS ---"); 
+  s->println("\n--- AURA STATUS ---"); 
   s->print("FW: "); s->println(FIRMWARE_VERSION);
   s->print("WIFI MODE: "); s->println(wifi_mode);
   s->print("IP:  "); s->println(WiFi.softAPIP()); 
