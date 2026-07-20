@@ -35,3 +35,34 @@ git remote add origin https://github.com/Qyabro/artisan_aura_basic_v1.0.git
 
 - Subir el código a GitHub (Push)
 git push -u origin main
+
+
+# Crear TAGs para versiones estables
+
+Paso 1: Crea un tag "anotado" localmente
+Asegúrate de estar en tu rama main y ejecuta:
+git tag -a v1.0.0 -m "Versión estable v1.0.0: Interfaz TC4 y lectura de temperatura funcionales"
+
+Paso 2: Sube el tag a GitHub
+El comando git push normal no sube los tags por defecto. Debes indicarle que lo haga:
+git push origin v1.0.0
+
+(Si alguna vez creas varios tags a la vez y quieres subirlos todos, puedes usar git push origin --tags).
+
+
+# Truco para manejar versiones en GitHub
+Al trabajar con firmware, no debes subir los archivos binarios compilados (.bin, .elf, .hex) directamente al repositorio de código, ya que lo vuelven muy pesado. La mejor forma de manejar los archivos listos para flashear es esta:
+
+Sube tu Tag (v1.0.0) usando el comando del paso 2.
+
+Ve a la página de tu repositorio en GitHub y busca la sección Releases (en la columna derecha).
+
+Haz clic en Draft a new release.
+
+En el desplegable "Choose a tag", selecciona tu Tag v1.0.0.
+
+Ponle un título y en la caja de descripción escribe qué cambios tiene esta versión.
+
+En la parte de abajo (donde dice "Attach binaries by dropping them here"), arrastra y suelta el archivo .bin que generó PlatformIO.
+
+Dale a Publish release.
